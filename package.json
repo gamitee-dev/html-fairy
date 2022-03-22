@@ -1,0 +1,36 @@
+{
+  "name": "html-fairy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest",
+    "eslint:test": "eslint --max-warnings 0",
+    "test:ci": "npm run build -- --noEmit && npm test && npm run eslint:test",
+    "test:coverage": "jest --config ./jest.coverage.config.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.17.8",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-typescript": "^7.16.7",
+    "@types/escape-html": "^1.0.1",
+    "@types/jest": "^27.4.1",
+    "@typescript-eslint/eslint-plugin": "^5.16.0",
+    "@typescript-eslint/parser": "^5.16.0",
+    "babel-jest": "^27.5.1",
+    "eslint": "^8.11.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-import-resolver-typescript": "^2.5.0",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-jest": "^26.1.2",
+    "jest": "^27.5.1",
+    "typescript": "^4.6.2"
+  },
+  "dependencies": {
+    "escape-html": "^1.0.3"
+  }
+}

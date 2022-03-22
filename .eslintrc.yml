@@ -1,0 +1,27 @@
+env:
+  browser: true
+  es2021: true
+extends:
+  - airbnb-base
+  - plugin:jest/all
+parser: '@typescript-eslint/parser'
+parserOptions:
+  ecmaVersion: latest
+  sourceType: module
+plugins:
+  - '@typescript-eslint'
+overrides:
+    - files: ['*.ts']
+      extends:
+          - plugin:@typescript-eslint/eslint-recommended
+          - plugin:@typescript-eslint/recommended
+rules:
+  jest/prefer-expect-assertions: 0
+  jest/no-hooks: 0
+  import/extensions:
+    ['error', 'ignorePackages', {'js': 'never', 'jsx': 'never', 'ts': 'never', 'tsx': 'never'}]
+settings:
+    import/resolver:
+        typescript:
+        node:
+            extensions: ['.js', '.ts']

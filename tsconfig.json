@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+      "target": "ES2020",
+      "module": "ESNext",
+      "skipLibCheck": true,
+      "esModuleInterop": true,
+      "strictNullChecks": true,
+      "strict": true,
+      "declaration": true,
+      "outDir": "./dist",
+      "sourceMap": true,
+      "removeComments": true
+  },
+  "exclude": [
+      "dist", "node_modules", "**/*.test.ts",
+  ]
+}
