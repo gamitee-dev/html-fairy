@@ -1,0 +1,47 @@
+name: lint and test
+on:
+  pull_request:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+
+      - name: Print GITHUB_REF for code coverage
+        run: echo "**--GITHUB_REF=${GITHUB_REF}--**"
+
+      - name: Cache node modules
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-node-modules-v1
+        with:
+          # npm cache files are stored in `~/.npm` on Linux/MacOS
+          path: ~/.npm
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+
+      - name: Install modules
+        run: npm i
+
+      - name: Type check
+        run: npm run check-types
+
+      - name: Run tests
+        run: npm run test:coverage
+
+      - name: Run ESLint
+        run: npm run eslint:test
+
+      - name: Upload coverage results
+        uses: actions/upload-artifact@v2
+        with:
+          name: ${{ github.sha }}-test-coverage
+          path: coverage
