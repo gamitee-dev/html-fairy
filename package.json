@@ -6,8 +6,9 @@
   "scripts": {
     "build": "tsc",
     "test": "jest",
+    "check-types": "npm run build -- --noEmit",
     "eslint:test": "eslint --max-warnings 0",
-    "test:ci": "npm run build -- --noEmit && npm test && npm run eslint:test",
+    "test:ci": "npm run check-types && npm test && npm run eslint:test",
     "test:coverage": "jest --config ./jest.coverage.config.js"
   },
   "keywords": [],
