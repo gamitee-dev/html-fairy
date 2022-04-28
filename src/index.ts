@@ -38,11 +38,11 @@ const htmlFairy = <T extends ElementOrText = HTMLElement>(
   // element will be put back in place instead of the the placeholder.
   const templateArgs = safeArgs.map((e, i) => {
     if (e instanceof Element || e instanceof Text) {
-      return `<div class="html-fairy-placeholder" data-index="${i}"></div>`;
+      return `<div class="html-fairy-ph" data-index="${i}"></div>`;
     }
     if (Array.isArray(e)) {
       if (e.every((v) => v instanceof Element || v instanceof Text)) {
-        return `<div class="html-fairy-placeholder" data-index="${i}" data-placeholder-type="array"></div>`;
+        return `<div class="html-fairy-ph" data-index="${i}" data-placeholder-type="array"></div>`;
       }
       return e.map((text) => text ?? '').join('');
     }
@@ -53,7 +53,7 @@ const htmlFairy = <T extends ElementOrText = HTMLElement>(
   const parsed = document.createElement('div');
   parsed.innerHTML = htmlStringRaw.trim();
 
-  parsed.querySelectorAll('.html-fairy-placeholder').forEach((element) => {
+  parsed.querySelectorAll('.html-fairy-ph').forEach((element) => {
     const originalArgIndex = Number.parseInt(element.getAttribute('data-index') ?? '-1', 10);
     if (originalArgIndex === -1) {
       throw new Error('html-fairy placeholder is defined with no data index');
