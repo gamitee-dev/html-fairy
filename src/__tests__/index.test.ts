@@ -134,11 +134,11 @@ describe('build HTML structure', () => {
   });
 
   it('should throw error if there is placeholder without data-index', () => {
-    const creator = () => htmlFairy<HTMLElement>`<div><div class="html-fairy-placeholder"></div></div>`;
+    const creator = () => htmlFairy<HTMLElement>`<div><div class="html-fairy-ph"></div></div>`;
     expect(creator).toThrow('html-fairy placeholder is defined with no data index');
   });
   it('should throw error if there is placeholder parent', () => {
-    const creator = () => htmlFairy<HTMLElement>`<div class="html-fairy-placeholder"><div></div></div>`;
+    const creator = () => htmlFairy<HTMLElement>`<div class="html-fairy-ph"><div></div></div>`;
     expect(creator).toThrow('html-fairy placeholder is defined with no data index');
   });
 
