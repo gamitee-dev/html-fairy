@@ -141,6 +141,13 @@ describe('build HTML structure', () => {
     const creator = () => htmlFairy<HTMLElement>`<div class="html-fairy-placeholder"><div></div></div>`;
     expect(creator).toThrow('html-fairy placeholder is defined with no data index');
   });
+
+  it('should build text and html together', () => {
+    const elements = htmlFairy`${'Today at:'}<span> ${21}:${23}</span>`;
+
+    expect(elements[0].textContent).toBe('Today at:');
+    expect(elements[1].textContent).toBe(' 21:23');
+  });
 });
 
 describe('safe configuration', () => {
@@ -183,6 +190,23 @@ describe('safe configuration', () => {
 
     expect(structure.textContent).toBe('text');
     expect(structure.childElementCount).toBe(1);
+  });
+
+  it('should escape object with toString as well', () => {
+    const subElement = {
+      toString() {
+        return '<span>text</span>';
+      },
+    };
+    const structure = htmlFairy`<div>${subElement}</div>`;
+    expect(structure.textContent).toBe('<span>text</span>');
+  });
+
+  it('should escape string constructor as well', () => {
+    // eslint-disable-next-line no-new-wrappers
+    const subElement = new String('<span>text</span>');
+    const structure = htmlFairy`<div>${subElement}</div>`;
+    expect(structure.textContent).toBe('<span>text</span>');
   });
 });
 
