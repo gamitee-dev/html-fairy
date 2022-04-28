@@ -2,7 +2,7 @@
   "name": "html-fairy",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "./dist/index.min.js",
   "scripts": {
     "build": "rm -rf ./dist && tsc && uglifyjs ./dist/index.js -mc -o ./dist/index.min.js --source-map",
     "test": "jest",
