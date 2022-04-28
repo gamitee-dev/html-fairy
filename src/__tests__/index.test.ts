@@ -159,31 +159,6 @@ describe('safe configuration', () => {
     expect(structure.childElementCount).toBe(0);
   });
 
-  it('should escape string if unsafe is false', () => {
-    const subElement = '<span>text</span>';
-    const structure = htmlFairy({ unsafe: false })`<div>${subElement}</div>`;
-
-    expect(structure.textContent).toBe('<span>text</span>');
-    expect(structure.childElementCount).toBe(0);
-  });
-
-  it('should not escape string if unsafe is true', () => {
-    const subElement = '<span>text</span>';
-    const structure = htmlFairy({ unsafe: true })`<div>${subElement}</div>`;
-
-    expect(structure.textContent).toBe('text');
-    expect(structure.childElementCount).toBe(1);
-  });
-
-  it('should escape array of strings', () => {
-    const list = ['a', 'b', 'c'].map((x) => `<li>${x}</li>`);
-    const structure = htmlFairy`<ul>${list}</ul>`;
-
-    expect(structure).toBeInstanceOf(HTMLUListElement);
-    expect(structure.textContent).toBe('<li>a</li><li>b</li><li>c</li>');
-    expect(structure.childElementCount).toBe(0);
-  });
-
   it('should not escape html elements', () => {
     const subElement = htmlFairy`<span>text</span>`;
     const structure = htmlFairy`<div>${subElement}</div>`;

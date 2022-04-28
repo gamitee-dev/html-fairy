@@ -1,15 +1,6 @@
-/* eslint-disable default-param-last */
 import escapeHtml from 'escape-html';
 
 type ElementOrText = Element | Text | Element[] | Text[];
-
-type HtmlFairyConfig = {
-  unsafe: boolean;
-}
-
-type HtmlFairy<T extends ElementOrText = HTMLElement> = (
-  htmlString: TemplateStringsArray, ...args: unknown[]
-) => T
 
 type SafeArgument = Element | Text | null | undefined | string
 
@@ -30,9 +21,9 @@ const escapeArg = (arg: unknown): SafeArgument | Array<SafeArgument> => {
  * The original element will be used and will be nested in the correct nested place.
  */
 const htmlFairy = <T extends ElementOrText = HTMLElement>(
-  safe: boolean, htmlString: TemplateStringsArray, ...args: unknown[]
+  htmlString: TemplateStringsArray, ...args: unknown[]
 ): T => {
-  const safeArgs = safe ? args.map(escapeArg) : args;
+  const safeArgs = args.map(escapeArg);
 
   // Replace every html element argument with a placeholder. After the creation, the original
   // element will be put back in place instead of the the placeholder.
@@ -76,25 +67,4 @@ const htmlFairy = <T extends ElementOrText = HTMLElement>(
   return parsed.firstChild as T;
 };
 
-function htmlFairyFunction<T extends ElementOrText = HTMLElement>(
-  htmlString: TemplateStringsArray, ...args: unknown[]
-): T;
-function htmlFairyFunction<T extends ElementOrText = HTMLElement>(
-  config: HtmlFairyConfig
-): HtmlFairy<T>;
-
-function htmlFairyFunction<T extends ElementOrText = HTMLElement>(
-  configOrHtmlString?: TemplateStringsArray | HtmlFairyConfig,
-  ...args: unknown[]
-): T | HtmlFairy<T> {
-  const config = configOrHtmlString as HtmlFairyConfig;
-
-  if (!config || config.unsafe !== undefined) {
-    return htmlFairy.bind(null, !config?.unsafe) as HtmlFairy<T>;
-  }
-
-  const htmlString = configOrHtmlString as TemplateStringsArray;
-  return htmlFairy<T>(true, htmlString, ...args);
-}
-
-export default htmlFairyFunction;
+export default htmlFairy;
