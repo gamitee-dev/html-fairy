@@ -19,7 +19,7 @@
     "@babel/preset-env": "^7.17.10",
     "@babel/preset-typescript": "^7.16.7",
     "@types/escape-html": "^1.0.2",
-    "@types/jest": "^27.4.1",
+    "@types/jest": "^27.5.0",
     "@typescript-eslint/eslint-plugin": "^5.21.0",
     "@typescript-eslint/parser": "^5.21.0",
     "babel-jest": "^28.0.3",
