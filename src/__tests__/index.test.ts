@@ -183,6 +183,16 @@ describe('safe configuration', () => {
     const structure = htmlFairy`<div>${subElement}</div>`;
     expect(structure.textContent).toBe('<span>text</span>');
   });
+
+  it('can be abused if you explicit want it', () => {
+    const eveilScript = '<script src="https://evil.com/"></script>';
+    const templateStrings: TemplateStringsArray = Object.assign(
+      [eveilScript],
+      { raw: [eveilScript] },
+    );
+    const structure = htmlFairy<HTMLScriptElement>(templateStrings, []);
+    expect(structure.src).toBe('https://evil.com/');
+  });
 });
 
 describe('htmlFairy with web components', () => {
