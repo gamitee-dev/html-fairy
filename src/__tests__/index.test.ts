@@ -148,6 +148,35 @@ describe('build HTML structure', () => {
     expect(elements[0].textContent).toBe('Today at:');
     expect(elements[1].textContent).toBe(' 21:23');
   });
+
+  it('should remove more then one white sapce', () => {
+    const element = htmlFairy`<div>
+      <span>Name:</span>
+      <span>Avi    </span>
+    </div>`;
+
+    expect(element.textContent).toBe(' Name: Avi  ');
+  });
+
+  it('should not remove more then one white sapce from parameters', () => {
+    const name = 'Avi           ';
+    const element = htmlFairy`<div>
+      <span>Name:</span>
+      <span>${name}</span>
+    </div>`;
+
+    expect(element.textContent).toBe(' Name: Avi            ');
+  });
+
+  it('should remove more then one white sapce even from paragraph element', () => {
+    const element = htmlFairy`<div>
+      <span>1:</span>
+      <p>text   
+      more text</p>
+    </div>`;
+
+    expect(element.textContent).toBe(' 1: text more text ');
+  });
 });
 
 describe('safe configuration', () => {

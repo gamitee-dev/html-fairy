@@ -40,7 +40,9 @@ const htmlFairy = <T extends ElementOrText = HTMLElement>(
     return e ?? '';
   });
 
-  const htmlStringRaw = String.raw(htmlString, ...templateArgs);
+  const stringsWithoutSpaces = htmlString.map((str) => str.replace(/\s+/g, ' '));
+
+  const htmlStringRaw = String.raw({ raw: stringsWithoutSpaces }, ...templateArgs);
   const parsed = document.createElement('div');
   parsed.innerHTML = htmlStringRaw.trim();
 
