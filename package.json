@@ -1,6 +1,6 @@
 {
   "name": "html-fairy",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "",
   "main": "./dist/index.min.js",
   "scripts": {
@@ -12,8 +12,8 @@
     "test:coverage": "jest --config ./jest.coverage.config.js"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "EladHeller",
+  "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.20.5",
     "@babel/preset-env": "^7.20.2",

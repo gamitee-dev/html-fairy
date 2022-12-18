@@ -13,7 +13,7 @@ jobs:
       contents: write
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           token: ${{ secrets.GAMITEE_BOT_COMMIT_ACCESS_TOKEN }}
       - name: Check Last Commit
@@ -54,11 +54,6 @@ jobs:
             fi
           done
           echo "RELEASE_VERSION=${version}" >> $GITHUB_ENV
-      - name: Set up Python 3.8
-        if: ${{ !env.skip_ci }}
-        uses: actions/setup-python@v2
-        with:
-          python-version: 3.8
       - name: Install NPM Dependencies
         if: ${{ !env.skip_ci }}
         run: npm install

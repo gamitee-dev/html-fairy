@@ -1,9 +1,8 @@
-[![CI](https://github.com/gamitee-dev/html-fairy/actions/workflows/linter.ytml/badge.svg)](https://github.com/gamitee-dev/html-fairy/actions/workflows/linter.ytml) [![CD](https://github.com/gamitee-dev/html-fairy/actions/workflows/deploy.yml/badge.svg)](https://github.com/gamitee-dev/html-fairy/actions/workflows/deploy.yml)
+[![CI](https://github.com/gamitee-dev/html-fairy/actions/workflows/linter.yml/badge.svg)](https://github.com/gamitee-dev/html-fairy/actions/workflows/linter.yml) [![CD](https://github.com/gamitee-dev/html-fairy/actions/workflows/deploy.yml/badge.svg)](https://github.com/gamitee-dev/html-fairy/actions/workflows/deploy.yml)
 
 
-html-fairy
-A simple, tiny and XSS utility for creating HTML structures from template strings and arguments.
-
+# html-fairy
+A simple, tiny, and XSS-protected tool for creating HTML structures from strings and arguments.
 
 ## Installation
 ``` js
@@ -33,8 +32,9 @@ import htmlFairy from 'html-fairy';
 const list = ['a', 'b', 'c'].map((x) => htmlFairy`<li>${x}</li>`);
 const element = htmlFairy`<ul>${list}</ul>`;
 ```
-License
-html-fairy is released under the MIT License. See the LICENSE file for details.
+
+## License
+html-fairy is released under the MIT License. See the [LICENSE](./LICENCE) file for details.
 
 
 
