@@ -1,5 +1,5 @@
 {
-  "name": "html-fairy",
+  "name": "@joyned/html-fairy",
   "version": "0.1.1",
   "description": "",
   "main": "./dist/index.min.js",
@@ -33,6 +33,10 @@
     "typescript": "^4.9.4",
     "uglify-js": "^3.17.4"
   },
+  "files": [
+    "dist"
+  ],
+  "sideEffects": false,
   "dependencies": {
     "escape-html": "^1.0.3"
   }
