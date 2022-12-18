@@ -52,3 +52,4 @@ const htmlFairy = (htmlString, ...args) => {
     return parsed.firstChild;
 };
 export default htmlFairy;
+//# sourceMappingURL=index.js.map
