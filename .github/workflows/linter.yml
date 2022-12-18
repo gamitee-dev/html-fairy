@@ -13,9 +13,6 @@ jobs:
         with:
           persist-credentials: false
 
-      - name: Print GITHUB_REF for code coverage
-        run: echo "**--GITHUB_REF=${GITHUB_REF}--**"
-
       - name: Cache node modules
         uses: actions/cache@v3
         env:
