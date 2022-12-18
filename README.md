@@ -32,6 +32,17 @@ import htmlFairy from 'html-fairy';
 const list = ['a', 'b', 'c'].map((x) => htmlFairy`<li>${x}</li>`);
 const element = htmlFairy`<ul>${list}</ul>`;
 ```
+It's prevent XSS by default.
+
+``` js
+import htmlFairy from 'html-fairy';
+
+const evilUserInput = '<script>alert("XSS")</script>';
+const someElement = htmlFairy`<div>no xss</div>`;
+const element = htmlFairy`<div>${someElement}${evilUserInput}</div>`;
+```
+<img src="./resources/print-screen-no-xss.jpeg" alt="no-xss" width="150"/>
+
 
 ## License
 html-fairy is released under the MIT License. See the [LICENSE](./LICENCE) file for details.
