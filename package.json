@@ -2,7 +2,7 @@
   "name": "@joyned/html-fairy",
   "version": "0.1.3",
   "description": "",
-  "main": "./dist/index.min.js",
+  "main": "./dist/index.js",
   "scripts": {
     "build": "rm -rf ./dist && tsc",
     "test": "jest",
