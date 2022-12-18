@@ -1,6 +1,5 @@
 [![CI](https://github.com/gamitee-dev/html-fairy/actions/workflows/linter.yml/badge.svg)](https://github.com/gamitee-dev/html-fairy/actions/workflows/linter.yml) [![CD](https://github.com/gamitee-dev/html-fairy/actions/workflows/deploy.yml/badge.svg)](https://github.com/gamitee-dev/html-fairy/actions/workflows/deploy.yml)
 
-
 # html-fairy
 A simple, tiny, and XSS-protected tool for creating HTML structures from strings and arguments.
 
