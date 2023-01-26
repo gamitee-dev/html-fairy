@@ -5,6 +5,7 @@ export default (): webpack.Configuration => ({
   mode: 'production',
   entry: './src/index.ts',
   output: {
+    filename: 'index.js',
     library: "htmlFairy",
     libraryTarget: 'umd',
     globalObject: 'this',
