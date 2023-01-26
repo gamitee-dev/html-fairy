@@ -11,6 +11,14 @@
     "test:ci": "npm run check-types && npm run test:coverage && npm run eslint:test",
     "test:coverage": "jest --config ./jest.coverage.config.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gamitee-dev/html-fairy.git"
+  },
+  "bugs": {
+    "url": "https://github.com/gamitee-dev/html-fairy/issues"
+  },
+  "homepage": "https://github.com/gamitee-dev/html-fairy#readme",
   "keywords": [],
   "author": "EladHeller",
   "license": "MIT",
