@@ -6,10 +6,12 @@ export default (): webpack.Configuration => ({
   entry: './src/index.ts',
   output: {
     filename: 'index.js',
-    library: "htmlFairy",
-    libraryTarget: 'umd',
+    libraryTarget: 'module',
     globalObject: 'this',
     umdNamedDefine: true,
+  },
+  experiments: {
+    outputModule: true,
   },
   resolve: { extensions: ['.ts', '.js'] },
   devtool: 'source-map',
