@@ -1,4 +1,9 @@
-import escapeHtml from 'escape-html';
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const escape_html_1 = __importDefault(require("escape-html"));
 const escapeArg = (arg) => {
     if (Array.isArray(arg)) {
         return [].concat(...arg.map(escapeArg));
@@ -9,10 +14,16 @@ const escapeArg = (arg) => {
     if (arg == null || !arg.toString) {
         return null;
     }
-    return escapeHtml(arg.toString());
+    return (0, escape_html_1.default)(arg.toString());
 };
+/**
+ * Returns an HTML structure build from the given `htmlString`. If any argument is a HTMLElement
+ * The original element will be used and will be nested in the correct nested place.
+ */
 const htmlFairy = (htmlString, ...args) => {
     const safeArgs = args.map(escapeArg);
+    // Replace every html element argument with a placeholder. After the creation, the original
+    // element will be put back in place instead of the the placeholder.
     const templateArgs = safeArgs.map((e, i) => {
         if (e instanceof Element || e instanceof Text) {
             return `<div class="html-fairy-ph" data-index="${i}"></div>`;
@@ -51,5 +62,5 @@ const htmlFairy = (htmlString, ...args) => {
     }
     return parsed.firstChild;
 };
-export default htmlFairy;
+exports.default = htmlFairy;
 //# sourceMappingURL=index.js.map
