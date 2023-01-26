@@ -11,23 +11,31 @@
     "test:ci": "npm run check-types && npm run test:coverage && npm run eslint:test",
     "test:coverage": "jest --config ./jest.coverage.config.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gamitee-dev/html-fairy.git"
+  },
+  "bugs": {
+    "url": "https://github.com/gamitee-dev/html-fairy/issues"
+  },
+  "homepage": "https://github.com/gamitee-dev/html-fairy#readme",
   "keywords": [],
   "author": "EladHeller",
   "license": "MIT",
   "devDependencies": {
-    "@babel/core": "^7.20.5",
+    "@babel/core": "^7.20.12",
     "@babel/preset-env": "^7.20.2",
     "@babel/preset-typescript": "^7.18.6",
     "@types/escape-html": "^1.0.2",
-    "@types/jest": "^29.2.4",
-    "@typescript-eslint/eslint-plugin": "^5.46.1",
-    "@typescript-eslint/parser": "^5.46.1",
+    "@types/jest": "^29.2.6",
+    "@typescript-eslint/eslint-plugin": "^5.48.2",
+    "@typescript-eslint/parser": "^5.48.2",
     "babel-jest": "^29.3.1",
-    "eslint": "^8.30.0",
+    "eslint": "^8.32.0",
     "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-import-resolver-typescript": "^3.5.2",
-    "eslint-plugin-import": "^2.26.0",
-    "eslint-plugin-jest": "^27.1.7",
+    "eslint-import-resolver-typescript": "^3.5.3",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-jest": "^27.2.1",
     "jest": "^29.3.1",
     "jest-environment-jsdom": "^29.3.1",
     "typescript": "^4.9.4"
