@@ -4,7 +4,7 @@
   "description": "",
   "main": "./dist/index.js",
   "scripts": {
-    "build": "rm -rf ./dist && webpack && tsc --emitDeclarationOnly",
+    "build": "rm -rf ./dist && webpack && tsc --emitDeclarationOnly && sh ./scripts/remove-comments.sh",
     "test": "jest",
     "check-types": "tsc --noEmit",
     "eslint:test": "eslint --max-warnings 0",

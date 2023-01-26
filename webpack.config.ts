@@ -7,7 +7,7 @@ export default (): webpack.Configuration => ({
   output: {
     filename: 'index.js',
     library: "htmlFairy",
-    libraryTarget: 'umd',
+    libraryTarget: 'commonjs',
     globalObject: 'this',
     umdNamedDefine: true,
   },
