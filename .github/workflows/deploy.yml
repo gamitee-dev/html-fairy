@@ -60,6 +60,12 @@ jobs:
       - name: Generate Files
         if: ${{ !env.skip_ci }}
         run: npm run build
+      - name: Remove comments
+        run: |
+          cd dist
+          for file_name in `find . -name "*.js" -type f`; do
+            sed -i '/^\/.*$/d' $file_name
+          done
       - name: Commit & Push Files
         if: ${{ !env.skip_ci }}
         run: |
