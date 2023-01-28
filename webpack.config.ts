@@ -10,6 +10,7 @@ export default (): webpack.Configuration => ({
     globalObject: 'this',
     umdNamedDefine: true,
   },
+  externals: 'escape-html',
   experiments: {
     outputModule: true,
   },
