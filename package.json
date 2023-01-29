@@ -1,7 +1,7 @@
 {
-  "name": "@joyned/html-fairy",
+  "name": "html-fairy",
   "version": "0.1.13",
-  "description": "",
+  "description": "A simple, tiny, and XSS-protected tool for creating HTML structures from strings and arguments.",
   "main": "./dist/index.js",
   "scripts": {
     "build": "rm -rf ./dist && webpack && tsc --emitDeclarationOnly",
@@ -50,5 +50,6 @@
   "sideEffects": false,
   "dependencies": {
     "escape-html": "^1.0.3"
-  }
+  },
+  "types": "./dist/index.d.ts"
 }
