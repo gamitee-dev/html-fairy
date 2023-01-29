@@ -5,7 +5,7 @@ A simple, tiny, and XSS-protected tool for creating HTML structures from strings
 
 ## Installation
 ``` js
-npm install html-fairy
+npm install https://github.com/gamitee-dev/html-fairy.git
 ```
 
 ## Usage
