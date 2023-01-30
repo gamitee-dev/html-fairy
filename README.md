@@ -1,3 +1,5 @@
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/gamitee-dev/html-fairy/blob/develop/LICENSE) [![npm version](https://img.shields.io/npm/v/@joyned/html-fairy.svg?style=flat)](https://www.npmjs.com/package/@joyned/html-fairy) [![packge size](https://img.shields.io/bundlephobia/minzip/@joyned/html-fairy.svg)](https://bundlephobia.com/package/@joyned/html-fairy)
+
 [![CI](https://github.com/gamitee-dev/html-fairy/actions/workflows/linter.yml/badge.svg)](https://github.com/gamitee-dev/html-fairy/actions/workflows/linter.yml) [![CD](https://github.com/gamitee-dev/html-fairy/actions/workflows/deploy.yml/badge.svg)](https://github.com/gamitee-dev/html-fairy/actions/workflows/deploy.yml)
 
 # html-fairy
@@ -44,7 +46,7 @@ const element = htmlFairy`<div>${someElement}${evilUserInput}</div>`;
 
 
 ## License
-html-fairy is released under the MIT License. See the [LICENSE](./LICENCE) file for details.
+html-fairy is released under the MIT License. See the [LICENSE](./LICENSE) file for details.
 
 
 
