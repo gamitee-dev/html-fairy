@@ -1,6 +1,6 @@
 {
   "name": "@joyned/html-fairy",
-  "version": "0.1.14",
+  "version": "0.1.15",
   "description": "A simple, tiny, and XSS-protected tool for creating HTML structures from strings and arguments.",
   "main": "./dist/index.js",
   "scripts": {
