@@ -12,6 +12,6 @@ updates:
     commit-message:
       prefix: "[dependabot]"
     assignees:
-      - eladheller
+      - liormoa
     reviewers:
-      - eladheller
+      - liormoa
