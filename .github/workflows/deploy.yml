@@ -38,7 +38,7 @@ jobs:
           while [ $release_exists == 1 ]; do
             echo "Checking if release ${version} exists"
             status_code=$(
-              curl -I --location "https://api.github.com/repos/gamitee-dev/html-fairy/releases/tags/$version" \
+              curl -I --location "https://api.github.com/repos/${{ github.repository_owner }}/${{ github.repository }}/releases/tags/$version" \
               --header "Authorization: token ${{ secrets.GITHUB_TOKEN }}" | grep "HTTP/2" | cut -d' ' -f 2
             )
             if [ "$status_code" == "404" ]; then
@@ -85,7 +85,7 @@ jobs:
               --arg commit_hash "$commit_hash"
           )
           echo $payload
-          curl --request POST "https://api.github.com/repos/gamitee-dev/html-fairy/releases" \
+          curl --request POST "https://api.github.com/repos/${{ github.repository_owner }}/${{ github.repository }}/releases" \
             --header "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
             --header "Accept: application/vnd.github.v3+json" \
             --header "Content-Type: application/json" \
