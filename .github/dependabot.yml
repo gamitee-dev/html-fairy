@@ -19,6 +19,10 @@ updates:
     commit-message:
       prefix: "[dependabot]"
 
+    ignore:
+      - dependency-name: "@types/node"
+        update-types: ["version-update:semver-major"]
+
     # Intensity
     open-pull-requests-limit: 10
     schedule:
