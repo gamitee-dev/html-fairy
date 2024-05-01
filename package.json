@@ -23,8 +23,8 @@
   "author": "EladHeller",
   "license": "MIT",
   "devDependencies": {
-    "@babel/core": "^7.20.12",
-    "@babel/preset-env": "^7.24.4",
+    "@babel/core": "^7.24.5",
+    "@babel/preset-env": "^7.24.5",
     "@babel/preset-typescript": "^7.24.1",
     "@babel/register": "^7.23.7",
     "@types/escape-html": "^1.0.4",
