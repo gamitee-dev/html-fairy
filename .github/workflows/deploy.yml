@@ -54,6 +54,10 @@ jobs:
             fi
           done
           echo "RELEASE_VERSION=${version}" >> $GITHUB_ENV
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: package.json
       - name: Install NPM Dependencies
         if: ${{ !env.skip_ci }}
         run: npm install
