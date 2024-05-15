@@ -19,12 +19,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gamitee-dev/html-fairy.git"
+    "url": "git+https://github.com/joyned/html-fairy.git"
   },
   "bugs": {
-    "url": "https://github.com/gamitee-dev/html-fairy/issues"
+    "url": "https://github.com/joyned/html-fairy/issues"
   },
-  "homepage": "https://github.com/gamitee-dev/html-fairy#readme",
+  "homepage": "https://github.com/joyned/html-fairy#readme",
   "keywords": [],
   "author": "EladHeller",
   "license": "MIT",
